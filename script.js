@@ -1,8 +1,8 @@
 const container = document.getElementById("container")
-gerapagina()
 function gerapagina(n =16){
+
          
-        let alturaelargura = 720/n
+        let alturaelargura = 710/n
         
         for(let k= 0; k <n; k++){
         const gridrow = document.createElement("div")
@@ -16,19 +16,37 @@ function gerapagina(n =16){
                 grid.style.display = "flex"
                 grid.style.backgroundColor = "white"
                 grid.addEventListener("mouseenter",(e) =>{
-                        grid.style.backgroundColor = "black";
+                        if (grid.style.backgroundColor === "white"){
+                        grid.style.backgroundColor = getRandomColor();
+                        }
+                        grid.style.opacity = Number(grid.style.opacity)+0.1;
                 })
                 gridrow.appendChild(grid)
         }
                 container.appendChild(gridrow)
         }
 }
+
+gerapagina()
+
 function popUp (){
         let i = prompt("Insira um numero de 1 a 100:")
+        if (i>100){
+                window.alert("ERRO, INSIRA UM NUMERO MENOR")
+                popUp()
+        }
+
+        else {
         container.innerHTML=""
         gerapagina(i)
+        }
 }
 
-function randomizeColor(){
-        return Math.random()*16773120 +1
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }

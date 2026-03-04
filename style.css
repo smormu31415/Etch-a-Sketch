@@ -1,15 +1,27 @@
 body{
-    background-color: red;
-}
-#container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:red;
-    height: 720px;
+    margin: 0 0;
+    background-color: red;
+    
+}
+#container{
+    border-radius: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    
+    height: 710px;
+    width: 710px;
+    padding: 20px;
+    
+
 }
 
 #botao{
+    padding: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
